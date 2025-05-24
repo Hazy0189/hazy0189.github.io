@@ -8,7 +8,7 @@ tags:
 category: "CTF National"
 ---
 
-This is an National CTF Challenge, i only solve one but might as well make a write up for fun :)
+This is a National CTF Challenge, i only solve one but might as well make a write up for fun :)
 
 # Pwn - Fortune's Tale
 

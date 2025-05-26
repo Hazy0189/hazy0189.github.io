@@ -2,10 +2,7 @@
 
 ## 🧠 About Me
 
-I'm a passionate **Cybersecurity Student** and dedicated **Capture The Flag (CTF) Player**, with a strong focus on:
-
-- 🛠 **Binary Exploitation**
-- 🌐 **Web Security**
+I'm a passionate **Cybersecurity Student** and dedicated **Capture The Flag (CTF) Player**, with a strong focus on **Binary Exploitation**, **Web Security**
 
 When I’m not grinding through CTFs, you’ll probably find me hacking away on **Hack The Box** or **TryHackMe**, always hungry to learn and level up my skills.
 

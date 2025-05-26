@@ -49,7 +49,7 @@ Follow my journey, progress, and challenge history across various platforms:
 
 ---
 
-> 🔹 “**Always give your best and never give up.**” 🔹
+🔹 “**Always give your best and never give up.**” 🔹
 
 🚀 Thanks for visiting my profile!  
 Let's connect if you’re into **CTF collabs**, **low-level hacking**, or just love talking **vulnerabilities**.

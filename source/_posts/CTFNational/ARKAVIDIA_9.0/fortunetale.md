@@ -6,6 +6,7 @@ tags:
     - Stack Pivot
     - Ret2system
 category: "CTF National"
+date: "2025-03-16 10:04:20"
 ---
 
 This is a National CTF Challenge, i only solve one but might as well make a write up for fun :)
@@ -14,7 +15,7 @@ This is a National CTF Challenge, i only solve one but might as well make a writ
 
 ## Introduction 
 
-![alt](/img/CTFNational/ARKAVIDIA_9.0/FortuneTale.png)
+![alt](../../../img/CTFNational/ARKAVIDIA_9.0/FortuneTale.png)
 
 ## Source Code
 

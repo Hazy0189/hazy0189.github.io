@@ -7,6 +7,7 @@ tags:
     - BOF
     - Modprobe
 category: "CTF Time"
+date: "2025-05-26 10:27:08"
 ---
 
 This is a CTF Time Challenge, i saw it was simple kernel challenge might as well try to explain my thought process of doing this.
@@ -381,6 +382,10 @@ If we see the modprobe_path value currently is `/home/user/w` our execute script
 Finally, we can create a function to abuse `modprobe_path`. I used the function from [the guide before](https://0x434b.dev/dabbling-with-linux-kernel-exploitation-ctf-challenges-to-learn-the-ropes/) and made a few adjustments so it works with `/home/user`
 
 ```c
+char *win_condition = "/home/user/w";
+char *dummy_file = "/home/user/d";
+char *res = "/home/user/flag";
+
 const char* arb_exec = 
 "#!/bin/sh\n"
 "cat /flag > /home/user/flag\n"

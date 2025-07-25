@@ -1,5 +1,5 @@
 ---
-title: "The Ace CTF 2025 Qual - Pwn [WRITE UP]"
+title: "The ITFest CTF 2025 Qual - Pwn [WRITE UP]"
 tags:
     - Pwn
     - UAF
@@ -9,7 +9,7 @@ tags:
     - Socket & Connect
     - Execve
 category: "CTF National"
-date: "2025-07-25 19:00:40"
+date: "2025-07-25 12:47:10"
 ---
 
 This is a National CTF Challenge, thought the finalist is 20 team so accidently make the write up. Might as well upload in english here

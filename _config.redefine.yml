@@ -13,7 +13,7 @@ info:
   # Site title
   title: Hazy's Blog
   # Site subtitle
-  subtitle: Just Chill & Relax.
+  subtitle: Full pwn write up.
   # Author name
   author: Hazy
   # Site URL
@@ -131,7 +131,7 @@ home_banner:
   title: Hazy
   # Home banner subtitle
   subtitle:
-    text: ["Always give your best", "You want it? Just pwn it"] # subtitle text, array
+    text: ["Always give your best", "Experience will guide you", "Try or never"] # subtitle text, array
     hitokoto:  # 一言配置
       enable: false # Whether to enable hitokoto
       show_author: false # Whether to show author

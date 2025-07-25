@@ -176,6 +176,7 @@ Given the `soal` file with `libc.so.6`. First, I ran `pwninit` for patching, the
 2. Fill Page, which will request the index and input data.
 3. Show Page, which will display the contents of the index.
 4. Remove Page, which will free the given index.
+
 It's also important to note that the size is limited to 0x420, and the number of indexes is limited to 3.
 
 There was a `heap overflow` during fill page. To get a libc leak, you can use a large allocation, where the free value goes to the `unsorted bin`. To view the `free` index, edit the previous index.

@@ -1,5 +1,5 @@
 ---
-title: "The ITFest CTF 2025 Qual - Pwn [WRITE UP]"
+title: "IT Festival CTF 2025 Qual - Pwn [WRITE UP]"
 tags:
     - Pwn
     - UAF

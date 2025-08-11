@@ -20,7 +20,7 @@ This is a National CTF Challenge, just got my first time full sweep pwn challeng
 
 ![alt](../../../img/HackToday_CTF_2025/FullSweepPwn.png)
 
-# Pwn - From The Start
+# Pwn - Pointless Float
 
 ## Introduction 
 

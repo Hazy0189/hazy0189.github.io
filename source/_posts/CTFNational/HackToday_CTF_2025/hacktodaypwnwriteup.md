@@ -608,7 +608,7 @@ if __name__ == '__main__':
 
 ### Flag
 
-`hacktoday{whatever_the_case_is_only_this_doing}`
+`hacktoday{apalah_soalnya_cuma_bisa_gini_doang}`
 
 # Pwn - Testadalah
 

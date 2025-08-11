@@ -1,5 +1,5 @@
 ---
-title: "The Ace CTF 2025 Qual - Pwn [WRITE UP]"
+title: "HackToday CTF 2025 Qual - Full Pwn [WRITE UP]"
 tags:
     - Pwn
     - BOF

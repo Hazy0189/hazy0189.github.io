@@ -18,13 +18,13 @@ date: "2025-08-11 12:00:40"
 
 This is a National CTF Challenge, just got my first time full sweep pwn challenges :?
 
-![alt](../../../img/HackToday_CTF_2025/FullSweepPwn.png)
+![alt](../../../img/CTFNational/HackToday_CTF_2025/FullSweepPwn.png)
 
 # Pwn - Pointless Float
 
 ## Introduction 
 
-![alt](../../../img/HackToday_CTF_2025/Pointless_Float.png)
+![alt](../../../img/CTFNational/HackToday_CTF_2025/Pointless_Float.png)
 
 ## Source Code
 
@@ -216,7 +216,7 @@ After providing input, it returns to `function2` and asks for the last input. Ho
 
 So, to get the program back, we can use the overflow in function3 to pivot at the exit, where `stack + 0x8` contains `_start`.
 
-![alt](../../../img/HackToday_CTF_2025/Stack.png)
+![alt](../../../img/CTFNational/HackToday_CTF_2025/Stack.png)
 
 Here i use "x" to skip the 10 integer number input. Then, at the last input, just fill it with canary 12 times (just to bypass the canary check).
 ```python
@@ -232,7 +232,7 @@ After that, we just repeat the input as before and enter function1 to leak libc.
 sa("> ", ret2system() + p64(canary)*8)
 ```
 
-![alt](../../../img/HackToday_CTF_2025/Solve.png)
+![alt](../../../img/CTFNational/HackToday_CTF_2025/Solve.png)
 
 ### Solve Script
 
@@ -384,7 +384,7 @@ if __name__ == '__main__':
 
 ## Introduction 
 
-![alt](../../../img/HackToday_CTF_2025/Test.png)
+![alt](../../../img/CTFNational/HackToday_CTF_2025/Test.png)
 
 ## Source Code
 
@@ -430,12 +430,12 @@ int main(int argc, char **argv, char **envp) {
 
 If you look at the input using `fgets`, fgets accepts nullbytes, but when printf it stops at nullbytes. So, our input structure must first format the strings and then the target address. To find the offset, you can input `AAAABBBB%{num}$p`.
 
-![alt](../../../img/HackToday_CTF_2025/FormatOffset.png)
+![alt](../../../img/CTFNational/HackToday_CTF_2025/FormatOffset.png)
 
 
 So, my idea here is to overwrite the printf return address to main while leaking libc. Then, for the second input, we can write 2 bytes, then return to main and combine them to get an 8-byte write. To ensure the input matches, simply look at the target address and calculate the offset.
 
-![alt](../../../img/HackToday_CTF_2025/CalcOffset.png)
+![alt](../../../img/CTFNational/HackToday_CTF_2025/CalcOffset.png)
 
 For this example i use write to libc.bss() -> 0.
 
@@ -466,7 +466,7 @@ Now just overwrite return address printf to exit. Here i use exit + 5 because of
 sl(fmtstr_payload(offset, writes={ret:libc.sym["exit"] + 5}, write_size='short'))
 ```
 
-![alt](../../../img/HackToday_CTF_2025/Solve2.png)
+![alt](../../../img/CTFNational/HackToday_CTF_2025/Solve2.png)
 
 ### Solve Script
 
@@ -614,7 +614,7 @@ if __name__ == '__main__':
 
 ## Introduction 
 
-![alt](../../../img/HackToday_CTF_2025/Testadalah.png)
+![alt](../../../img/CTFNational/HackToday_CTF_2025/Testadalah.png)
 
 ## Source Code
 
@@ -810,7 +810,7 @@ menu(2) #exit
 menu(0)
 ```
 
-![alt](../../../img/HackToday_CTF_2025/Solve3.png)
+![alt](../../../img/CTFNational/HackToday_CTF_2025/Solve3.png)
 
 
 ### Solve Script

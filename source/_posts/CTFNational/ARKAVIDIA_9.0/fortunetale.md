@@ -7,7 +7,7 @@ tags:
     - Ret2system
 category: "CTF National"
 date: "2025-03-16 10:04:20"
-thumbnail: "https://hazy0189.github.io/img/CTFNational/ARKAVIDIA_9.0/Logos.svg"
+thumbnail: "https://hazy0189.github.io/img/CTFNational/ARKAVIDIA_9.0/Logos.png"
 ---
 
 This is a National CTF Challenge, i only solve one but might as well make a write up for fun :)

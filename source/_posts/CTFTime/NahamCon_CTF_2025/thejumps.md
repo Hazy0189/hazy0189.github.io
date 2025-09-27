@@ -259,7 +259,7 @@ qemu-system-x86_64 \
     -s
 ```
 
-Also to easier analyzing i'm going to use [gdb gef-kernel by bata24](https://github.com/destr4ct/gef-kernel). To faster run gdb i will make short script to run gdb to connect the kernel running.
+Also to easier analyzing i'm going to use [gdb gef-kernel by bata24](https://github.com/bata24/gef). To faster run gdb i will make short script to run gdb to connect the kernel running.
 
 `gdb.sh`
 ```sh
@@ -531,5 +531,6 @@ int main(){
 For the `libpwn.c` can be see in the [github repo](https://github.com/Hazy0189/ctf-archieve/tree/main/CTFTime/2025/NahamCon%20CTF%202025/The%20Jumps).
 
 ### Flag
+
 
 `flag{682cc8a83e022703fe1527b1b3bba748}`

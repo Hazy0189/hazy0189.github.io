@@ -42,7 +42,13 @@ Follow my journey, progress, and challenge history across various platforms:
 ## 🏅 Achievements
 
 - **Finalist — Arkavida 9.0 (2025)**  
-  _Team Name: `katanya nama timnya bebas`_
+  _Team Name: `katanya nama timnya bebas` (6th place)_
+- **Finalist — ACE CTF (2025)**  
+  _Team Name: `ingfokan nama tim` (4th place)_
+- **Finalist — HackToday CTF (2025)**  
+  _Team Name: `PETIR - bubur ayam mang asep` (4th place)_
+- **Finalist — COMPFEST 17 CTF (2025)**  
+  _Team Name: `PETIR - CYH` (4th place)_
 
 ---
 

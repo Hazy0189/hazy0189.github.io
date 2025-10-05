@@ -12,19 +12,20 @@ tags:
     - FSOP
     - ORW
 category: "CTF National"
-date: "2025-07-20 19:00:40"
+date: "2025-10-05 12:50:40"
+thumbnail: "https://hazy0189.github.io/img/CTFNational/COMPFEST_17_CTF_Qual/Logo.png"
 ---
 
 This is a National CTF Challenge, another full sweep and also first time Top 1 in CTF on the qual POG :?
 ![alt](../../../img/CTFNational/COMPFEST_17_CTF_Qual/Top1.png)
 I guess the pwn really carry it XD
-![alt](../../../img/CTFNational/COMPFEST_17_CTF_Qual/FullsweepPwn.png)
+![alt](../../../img/CTFNational/COMPFEST_17_CTF_Qual/FullSweepPwn.png)
 
 # Pwn - Neutral Evil
 
 ## Introduction 
 
-![alt](../../../img/CTFNational/COMPFEST_17_CTF_Qual/Neutralevil.png)
+![alt](../../../img/CTFNational/COMPFEST_17_CTF_Qual/NeutralEvil.png)
 
 ## Source Code
 
@@ -500,7 +501,7 @@ Leak `stack` address with fmstr then leak heap and libc by moving the fastbin to
 ## Solution
 
 Given chall and the library i started with running pwninit to patch and unstripping the libc. Then when running the binary it give 4 option.
-![alt](../../../img/CTFNational/COMPFEST_17_CTF_Qual/AllinMenu.png)
+![alt](../../../img/CTFNational/COMPFEST_17_CTF_Qual/Allinmenu.png)
 1. `chunk[idx] = malloc(size)` chunk with size given limited to 0x78 also asking for the idx and content.
 2. `printf(*(chunk[idx]))` it will print the chunk content
 3. `free(chunk[idx])` free the chunk with idx given

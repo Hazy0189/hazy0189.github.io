@@ -16,7 +16,7 @@ thumbnail: "https://hazy0189.github.io/img/CTFNational/WRECK_IT_60_CTF/Logos.png
 ---
 
 This is a National CTF Challenge, another full sweep and kinda on edge final sadly.
-![alt](../../../img/CTFNational/WRECK_IT_60_CTF/FullsweepPwn.png)
+![alt](../../../img/CTFNational/WRECK_IT_60_CTF/FullSweepPwn.png)
 
 # Pwn - Treasure
 

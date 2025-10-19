@@ -14,6 +14,7 @@ tags:
 
 category: "CTF National"
 date: "2025-08-11 12:00:40"
+thumbnail: "https://hazy0189.github.io/img/CTFNational/HackToday_CTF_2025/Logo.png"
 ---
 
 This is a National CTF Challenge, just got my first time full sweep pwn challenges :?

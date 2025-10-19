@@ -17,7 +17,7 @@ tags:
     - Reverse Shell
 category: "CTF National"
 date: "2025-10-19 17:01:20"
-thumbnail: "https://hazy0189.github.io/img/CTFNational/SCH_CTF_25_Qual/Logos.png"
+thumbnail: "https://hazy0189.github.io/img/CTFNational/SCH_CTF_25_Qual/Logo.png"
 ---
 
 This is a National CTF Challenge, got full solve on the pwn and also top 1 scoreboard when freeze.

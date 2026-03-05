@@ -262,7 +262,7 @@ insert_link(b"S", b"c"*8 + p32(0x1337001))
 The second `insert_link` allocates **on the stack** and writes `0x1337001` directly over the saved `rip` — one byte past our shellcode's `nop` prefix.
 
 
-![alt](/img/CTFTime/Srdnlen_CTF_2026_Quals/Solve.png)
+![alt](/img/CTFTime/Srdnlen_CTF_2026_Quals/Solved.png)
 
 ### Solve Script
 

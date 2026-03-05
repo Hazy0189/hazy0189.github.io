@@ -524,6 +524,8 @@ if __name__ == '__main__':
         io.close()
 ```
 
+For the full source can be see in the [github repo](https://github.com/Hazy0189/ctf-archieve/tree/main/CTFTime/2026/Srdnlen%20CTF%202026%20Quals/Linx).
+
 ### Flag
 
 `srdnlen{y0u_ve_l1nk3d_v3ry_h4rd}`

@@ -2,7 +2,7 @@
 
 I do CTFs — mostly **pwn** and **web**. Currently a cybersecurity student.
 
-I play with **PwnSec** (international) and **PETIR** (national). Outside of CTFs I mess around on Hack The Box and TryHackMe whenever I get the chance.
+I play with **PwnSec** (international) and **PETIR** (national). Outside of CTFs I mess around on Hack The Box whenever I get the chance.
 
 ---
 

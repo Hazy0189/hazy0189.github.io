@@ -1,16 +1,12 @@
-# 👋 Hey there, I'm **Hazy** Cybersecurity Enthusiast & CTF Player
+# 👋 Hi, I'm **Hazy**
 
-## 🧠 About Me
+I do CTFs — mostly **pwn** and **web**. Currently a cybersecurity student.
 
-I'm a passionate **Cybersecurity Student** and dedicated **Capture The Flag (CTF) Player**, with a strong focus on **Binary Exploitation**, **Web Security**
-
-When I’m not grinding through CTFs, you’ll probably find me hacking away on **Hack The Box** or **TryHackMe**, always hungry to learn and level up my skills.
+I play with **PwnSec** (international) and **PETIR** (national). Outside of CTFs I mess around on Hack The Box and looking for bugs.
 
 ---
 
-## 🌍 My CTF Profiles
-
-Follow my journey, progress, and challenge history across various platforms:
+## 🌍 Where to find me
 
 - 🏴 [**CTFTime**](https://ctftime.org/user/179841)
 - 📚 [**CTFLearn**](https://ctflearn.com/user/Hazy0189)
@@ -24,37 +20,35 @@ Follow my journey, progress, and challenge history across various platforms:
 
 ---
 
-## 🛠 Skills & Interests
+## 🧩 Teams
 
-### 🔍 CTF Specialties
-- **Binary Exploitation**
+- **PwnSec** — international
+- **PETIR** — national
+
+---
+
+## 🛠 What I'm into
+
+- **Binary Exploitation** (pwn)
 - **Web Security**
-- Scripting with Python & Bash for automation
+- Python & Bash for scripting things
 
-### ⚙️ Tools I Use
-- Ghidra / IDA / pwndbg
-- Burp Suite / ZAP
-- Docker / QEMU
-- pwntools / requests / Flask
+**Tools:** VMWare Workstation, Ghidra / IDA / pwndbg / WinDBG, Burp Suite / ZAP, Docker / QEMU, pwntools / requests / Flask, Claude Code / Codex / Hermes
 
 ---
 
-## 🏅 Achievements
+## 🏅 Results
 
-- **Finalist — Arkavida 9.0 (2025)**  
-  _Team Name: `katanya nama timnya bebas` (6th place)_
-- **Finalist — ACE CTF (2025)**  
-  _Team Name: `ingfokan nama tim` (4th place)_
-- **Finalist — HackToday CTF (2025)**  
-  _Team Name: `PETIR - bubur ayam mang asep` (4th place)_
-- **Finalist — COMPFEST 17 CTF (2025)**  
-  _Team Name: `PETIR - CYH` (4th place)_
+- **COMPFEST 18 CTF (2026)** — Finalist, `PETIR - RITEP` (5th)
+- **Arkavida 9.0 (2025)** — Finalist, `katanya nama timnya bebas` (6th)
+- **ACE CTF (2025)** — Finalist, `ingfokan nama tim` (4th)
+- **HackToday CTF (2025)** — Finalist, `PETIR - bubur ayam mang asep` (4th)
+- **COMPFEST 17 CTF (2025)** — Finalist, `PETIR - CYH` (4th)
 
 ---
 
-> 🔹 “**Always give your best and never give up.**” 🔹
+> “always give your best and never give up.”
 
-🚀 Thanks for visiting my profile!  
-Let's connect if you’re into **CTF collabs**, **low-level hacking**, or just love talking **vulnerabilities**.
+Thanks for stopping by — hit me up if you’re into **low-level stuff**, or just want to talk about **bugs**.
 
 ---

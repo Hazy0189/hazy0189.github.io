@@ -2,7 +2,7 @@
 
 I do CTFs — mostly **pwn** and **web**. Currently a cybersecurity student.
 
-I play with **PwnSec** (international) and **PETIR** (national). Outside of CTFs I mess around on Hack The Box and looking for bugs.
+I play with **PwnSec** (international) and **PETIR** (national). Outside of CTFs I mess around on Hack The Box and TryHackMe whenever I get the chance.
 
 ---
 
@@ -47,8 +47,15 @@ I play with **PwnSec** (international) and **PETIR** (national). Outside of CTFs
 
 ---
 
+## 🪲 CVEs
+
+- [CVE-2026-96994](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-96994)
+- [CVE-2026-70054](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-70054)
+
+---
+
 > “always give your best and never give up.”
 
-Thanks for stopping by — hit me up if you’re into **low-level stuff**, or just want to talk about **bugs**.
+Thanks for stopping by — hit me up if you’re into **CTF collabs**, **low-level stuff**, or just want to talk about **bugs**.
 
 ---
